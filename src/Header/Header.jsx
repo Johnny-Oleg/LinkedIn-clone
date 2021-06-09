@@ -6,7 +6,7 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-import HeaderOption from '../HeaderOption/HeaderOption';
+import HeaderOption from './HeaderOption/HeaderOption';
 import './Header.css';
 
 const Header = () => {
@@ -25,7 +25,7 @@ const Header = () => {
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
                 <HeaderOption Icon={ChatIcon} title="Messaging" />
                 <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-                <HeaderOption avatar="https://media-exp1.licdn.com/dms/image/C4E35AQGVOvaIo1Il5g/profile-framedphoto-shrink_100_100/0/1599996056635?e=1623088800&v=beta&t=w_1vJWA6-btCHn_AABrWh59dDFBRqka9ck5baFswEyk" title="profile" />
+                <HeaderOption avatar="https://media-exp1.licdn.com/dms/image/C4E35AQGVOvaIo1Il5g/profile-framedphoto-shrink_100_100/0/1599996056635?e=1623340800&v=beta&t=sFGbTT6i72PUeOYSy3O8-gxI2f_2jbJEX79hMV7AYJ4" title="profile" />
             </div>
         </div>
     )

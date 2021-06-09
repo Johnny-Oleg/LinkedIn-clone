@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './Header/Header';
+import Sidebar from './Sidebar/Sidebar';
+import Feed from './Feed/Feed';
 
 import './App.css';
 
@@ -7,11 +9,12 @@ const App = () => {
     return (
         <div className="app">
             <Header />
-            {/* < AppBody>
+            <div className="app__body">
                 <Sidebar />
                 <Feed />
-                <Widgets />
-            </AppBody>     */}
+                {/* <Feed />
+                <Widgets /> */}
+            </div>    
         </div>
     );
 };
