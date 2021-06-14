@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import firebase from 'firebase';
-import { db } from '../firebase';
+import FlipMove from 'react-flip-move';
 import CreateIcon from '@material-ui/icons/Create';
 import ImageIcon from '@material-ui/icons/Image';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 
+
+import { db } from '../firebase';
+import { selectUser } from '../redux/userSlice';
 import InputOption from './InputOption/InputOption';
 import Post from './Post/Post';
 import './Feed.css';
 
 const Feed = () => {
+    const user = useSelector(selectUser);
     const [posts, setPosts] = useState([]);
     const [input, setInput] = useState('');
 
@@ -28,10 +33,10 @@ const Feed = () => {
         e.preventDefault();
         
         db.collection('posts').add({
-            name: 'Oleg Strygelski',
-            description: 'test',
+            name: user.displayName,
+            description: user.email,
             message: input,
-            photoUrl: '',
+            photoUrl: user.photoUrl || '',
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
 
@@ -55,16 +60,18 @@ const Feed = () => {
                     <InputOption Icon={CalendarViewDayIcon} title="Write article" color="#7FC15E" />
                 </div>
             </div>
-            <Post name='Oleg Strygelski' description='test' message='hi' />
-            {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
-                <Post 
-                    key={id}
-                    name={name} 
-                    description={description} 
-                    message={message} 
-                    photoUrl={photoUrl}
-                />
-            ))}
+            {/* <Post name='Oleg Strygelski' description='test' message='hi' /> */}
+            <FlipMove>
+                {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+                    <Post 
+                        key={id}
+                        name={name} 
+                        description={description} 
+                        message={message} 
+                        photoUrl={photoUrl}
+                    />
+                ))}
+            </FlipMove>
         </div>
     )
 }

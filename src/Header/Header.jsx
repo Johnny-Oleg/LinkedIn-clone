@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
@@ -38,7 +38,7 @@ const Header = () => {
                 <HeaderOption Icon={NotificationsIcon} title="Notifications" />
                 <HeaderOption 
                     onClick={logoutOfApp}
-                    avatar="https://media-exp1.licdn.com/dms/image/C4E35AQGVOvaIo1Il5g/profile-framedphoto-shrink_100_100/0/1599996056635?e=1623340800&v=beta&t=sFGbTT6i72PUeOYSy3O8-gxI2f_2jbJEX79hMV7AYJ4" 
+                    avatar={true}
                     title="profile"
                 />
             </div>
