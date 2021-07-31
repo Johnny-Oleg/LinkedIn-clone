@@ -8,7 +8,6 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
 
-
 import { db } from '../firebase';
 import { selectUser } from '../redux/userSlice';
 import InputOption from './InputOption/InputOption';
@@ -60,7 +59,6 @@ const Feed = () => {
                     <InputOption Icon={CalendarViewDayIcon} title="Write article" color="#7FC15E" />
                 </div>
             </div>
-            {/* <Post name='Oleg Strygelski' description='test' message='hi' /> */}
             <FlipMove>
                 {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
                     <Post 

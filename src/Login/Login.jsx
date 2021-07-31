@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { auth } from '../firebase';
 import { login } from '../redux/userSlice';
+
 import './Login.css';
 
 const Login = () => {
@@ -28,9 +29,7 @@ const Login = () => {
     }
     
     const register = () => {
-        if (!name) {
-            return alert('Please enter a full name');
-        }
+        if (!name) return alert('Please enter a full name');
 
         auth.createUserWithEmailAndPassword(email, password)
             .then(userAuth => {

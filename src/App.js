@@ -8,7 +8,6 @@ import Login from './Login/Login';
 import Sidebar from './Sidebar/Sidebar';
 import Feed from './Feed/Feed';
 import Widgets from './Widgets/Widgets';
-
 import './App.css';
 
 const App = () => {

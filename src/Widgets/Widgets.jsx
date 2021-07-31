@@ -23,7 +23,7 @@ const Widgets = () => {
                 <h2>LinkedIn News</h2>
                 <InfoIcon />
             </div>
-            {newsArticle('Japan is best', 'Check my channel!')}
+            {newsArticle('Japan is the best', 'Check my channel!')}
         </div>
     )
 }
